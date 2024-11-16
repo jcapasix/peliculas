@@ -5,9 +5,10 @@
 //  Created by Jordan Capa on 16/11/24.
 //
 import UIKit
+import DomainMovie
 
 protocol MovieViewProtocol: AnyObject {
-    func showMovieDetails(movie: Movie)
+    func showMovieDetails(movie: MovieEntity)
 }
 
 protocol MoviePresenterProtocol: AnyObject {
@@ -15,5 +16,5 @@ protocol MoviePresenterProtocol: AnyObject {
 }
 
 protocol MovieRouterProtocol: AnyObject {
-    static func createMovieModule(movie: Movie) -> UIViewController
+    static func createMovieModule(movie: MovieEntity) -> UIViewController
 }

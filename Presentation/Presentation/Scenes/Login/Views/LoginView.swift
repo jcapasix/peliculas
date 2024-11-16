@@ -10,7 +10,8 @@ import UIKit
 class LoginView: UIView {
     
     // MARK: - UI Elements
-    let titleLabel: UILabel = {
+    
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Login"
         label.font = UIFont.boldSystemFont(ofSize: 24)
@@ -47,6 +48,7 @@ class LoginView: UIView {
     }()
     
     // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -57,6 +59,7 @@ class LoginView: UIView {
     }
     
     // MARK: - Setup
+    
     private func setupView() {
         backgroundColor = .white
         addSubview(titleLabel)

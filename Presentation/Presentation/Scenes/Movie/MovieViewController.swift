@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DomainMovie
 
 class MovieViewController: UIViewController, MovieViewProtocol {
     var presenter: MoviePresenterProtocol?
@@ -21,7 +22,7 @@ class MovieViewController: UIViewController, MovieViewProtocol {
         presenter?.fetchMovieDetails()
     }
     
-    func showMovieDetails(movie: Movie) {
+    func showMovieDetails(movie: MovieEntity) {
         movieView.updateMovieDetails(movie: movie)
     }
 }

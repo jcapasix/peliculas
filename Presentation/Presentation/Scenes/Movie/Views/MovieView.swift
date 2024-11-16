@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import DomainMovie
 
 class MovieView: UIView {
     
     // MARK: - UI Elements
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 24)
@@ -40,6 +42,7 @@ class MovieView: UIView {
     }()
     
     // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -50,13 +53,13 @@ class MovieView: UIView {
     }
     
     // MARK: - Setup
+    
     private func setupView() {
         backgroundColor = .white
         addSubview(titleLabel)
         addSubview(yearLabel)
         addSubview(genreLabel)
         addSubview(descriptionLabel)
-        
         setupConstraints()
     }
     
@@ -81,7 +84,7 @@ class MovieView: UIView {
         ])
     }
     
-    func updateMovieDetails(movie: Movie) {
+    func updateMovieDetails(movie: MovieEntity) {
         titleLabel.text = movie.title
         yearLabel.text = "Year: \(movie.year)"
         genreLabel.text = "Genre: \(movie.genre)"

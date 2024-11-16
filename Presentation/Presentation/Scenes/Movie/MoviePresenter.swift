@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import DomainMovie
 
 class MoviePresenter: MoviePresenterProtocol {
     weak var view: MovieViewProtocol?
     var router: MovieRouterProtocol?
-    var movie: Movie
+    var movie: MovieEntity
     
-    init(view: MovieViewProtocol, router: MovieRouterProtocol, movie: Movie) {
+    init(view: MovieViewProtocol, router: MovieRouterProtocol, movie: MovieEntity) {
         self.view = view
         self.router = router
         self.movie = movie

@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import DomainMovie
 
 class HomeViewController: UIViewController, HomeViewProtocol {
     var presenter: HomePresenterProtocol?
-    
     private let homeView = HomeView()
     
     override func loadView() {
@@ -19,7 +19,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureActions()
-        presenter?.fetchMovies()
+        Task {
+            await presenter?.fetchMovies()
+        }
+        
     }
     
     private func configureActions() {
@@ -28,8 +31,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         title = "Peliculas"
     }
     
-    func showMovies(movies: [Movie]) {
-        homeView.updateMovies(movies: movies)
+    func showMovies(movies: [MovieEntity]) {
+        self.homeView.updateMovies(movies: movies)
     }
     
     func showError(message: String) {
@@ -46,7 +49,7 @@ extension HomeViewController: UISearchBarDelegate {
 }
 
 extension HomeViewController: HomeViewDelegate {
-    func didSelectMovie(movie: Movie) {
+    func didSelectMovie(movie: MovieEntity) {
         presenter?.navigateToDetail(movie: movie)
     }
 }

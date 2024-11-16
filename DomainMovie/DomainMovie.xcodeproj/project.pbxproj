@@ -7,96 +7,141 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50F304D12CE85922004CF92A /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F304D02CE85922004CF92A /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50FA08422CE880B700586F91 /* DomainMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 50FA08412CE880B700586F91 /* DomainMovie.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50FA08492CE880C500586F91 /* MovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA08482CE880C500586F91 /* MovieInteractor.swift */; };
+		50FA085D2CE8822800586F91 /* DataMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FA085C2CE8822800586F91 /* DataMovie.framework */; };
+		50FA085E2CE8822800586F91 /* DataMovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50FA085C2CE8822800586F91 /* DataMovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50FA08622CE8849900586F91 /* MovieEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA08612CE8849900586F91 /* MovieEntity.swift */; };
+		50FA08672CE8887200586F91 /* MovieInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA08662CE8887200586F91 /* MovieInteractorProtocol.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		50FA085F2CE8822800586F91 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50FA085E2CE8822800586F91 /* DataMovie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		50F304CD2CE85922004CF92A /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50F304D02CE85922004CF92A /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		50FA083E2CE880B700586F91 /* DomainMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DomainMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FA08412CE880B700586F91 /* DomainMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomainMovie.h; sourceTree = "<group>"; };
+		50FA08482CE880C500586F91 /* MovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractor.swift; sourceTree = "<group>"; };
+		50FA085C2CE8822800586F91 /* DataMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50FA08612CE8849900586F91 /* MovieEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEntity.swift; sourceTree = "<group>"; };
+		50FA08662CE8887200586F91 /* MovieInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInteractorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		50F304CA2CE85922004CF92A /* Frameworks */ = {
+		50FA083B2CE880B700586F91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FA085D2CE8822800586F91 /* DataMovie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50F304C32CE85922004CF92A = {
+		50FA08342CE880B700586F91 = {
 			isa = PBXGroup;
 			children = (
-				50F304CF2CE85922004CF92A /* Data */,
-				50F304CE2CE85922004CF92A /* Products */,
+				50FA08402CE880B700586F91 /* DomainMovie */,
+				50FA083F2CE880B700586F91 /* Products */,
+				50FA085B2CE8822800586F91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		50F304CE2CE85922004CF92A /* Products */ = {
+		50FA083F2CE880B700586F91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50F304CD2CE85922004CF92A /* Data.framework */,
+				50FA083E2CE880B700586F91 /* DomainMovie.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		50F304CF2CE85922004CF92A /* Data */ = {
+		50FA08402CE880B700586F91 /* DomainMovie */ = {
 			isa = PBXGroup;
 			children = (
-				50F304D02CE85922004CF92A /* Data.h */,
+				50FA08602CE8848A00586F91 /* Entity */,
+				50FA08482CE880C500586F91 /* MovieInteractor.swift */,
+				50FA08662CE8887200586F91 /* MovieInteractorProtocol.swift */,
+				50FA08412CE880B700586F91 /* DomainMovie.h */,
 			);
-			path = Data;
+			path = DomainMovie;
+			sourceTree = "<group>";
+		};
+		50FA085B2CE8822800586F91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50FA085C2CE8822800586F91 /* DataMovie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50FA08602CE8848A00586F91 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				50FA08612CE8849900586F91 /* MovieEntity.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		50F304C82CE85922004CF92A /* Headers */ = {
+		50FA08392CE880B700586F91 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F304D12CE85922004CF92A /* Data.h in Headers */,
+				50FA08422CE880B700586F91 /* DomainMovie.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		50F304CC2CE85922004CF92A /* Data */ = {
+		50FA083D2CE880B700586F91 /* DomainMovie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50F304D42CE85922004CF92A /* Build configuration list for PBXNativeTarget "Data" */;
+			buildConfigurationList = 50FA08452CE880B700586F91 /* Build configuration list for PBXNativeTarget "DomainMovie" */;
 			buildPhases = (
-				50F304C82CE85922004CF92A /* Headers */,
-				50F304C92CE85922004CF92A /* Sources */,
-				50F304CA2CE85922004CF92A /* Frameworks */,
-				50F304CB2CE85922004CF92A /* Resources */,
+				50FA08392CE880B700586F91 /* Headers */,
+				50FA083A2CE880B700586F91 /* Sources */,
+				50FA083B2CE880B700586F91 /* Frameworks */,
+				50FA083C2CE880B700586F91 /* Resources */,
+				50FA085F2CE8822800586F91 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Data;
-			productName = Data;
-			productReference = 50F304CD2CE85922004CF92A /* Data.framework */;
+			name = DomainMovie;
+			productName = DomainMovie;
+			productReference = 50FA083E2CE880B700586F91 /* DomainMovie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		50F304C42CE85922004CF92A /* Project object */ = {
+		50FA08352CE880B700586F91 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					50F304CC2CE85922004CF92A = {
+					50FA083D2CE880B700586F91 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = 50F304C72CE85922004CF92A /* Build configuration list for PBXProject "Data" */;
+			buildConfigurationList = 50FA08382CE880B700586F91 /* Build configuration list for PBXProject "DomainMovie" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,18 +149,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 50F304C32CE85922004CF92A;
-			productRefGroup = 50F304CE2CE85922004CF92A /* Products */;
+			mainGroup = 50FA08342CE880B700586F91;
+			productRefGroup = 50FA083F2CE880B700586F91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50F304CC2CE85922004CF92A /* Data */,
+				50FA083D2CE880B700586F91 /* DomainMovie */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		50F304CB2CE85922004CF92A /* Resources */ = {
+		50FA083C2CE880B700586F91 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,17 +170,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		50F304C92CE85922004CF92A /* Sources */ = {
+		50FA083A2CE880B700586F91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FA08492CE880C500586F91 /* MovieInteractor.swift in Sources */,
+				50FA08672CE8887200586F91 /* MovieInteractorProtocol.swift in Sources */,
+				50FA08622CE8849900586F91 /* MovieEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		50F304D22CE85922004CF92A /* Debug */ = {
+		50FA08432CE880B700586F91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,10 +236,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -199,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		50F304D32CE85922004CF92A /* Release */ = {
+		50FA08442CE880B700586F91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,20 +296,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		50F304D52CE85922004CF92A /* Debug */ = {
+		50FA08462CE880B700586F91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -270,24 +322,17 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.DomainMovie;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -295,11 +340,10 @@
 			};
 			name = Debug;
 		};
-		50F304D62CE85922004CF92A /* Release */ = {
+		50FA08472CE880B700586F91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -310,24 +354,17 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.DomainMovie;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -338,25 +375,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50F304C72CE85922004CF92A /* Build configuration list for PBXProject "Data" */ = {
+		50FA08382CE880B700586F91 /* Build configuration list for PBXProject "DomainMovie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50F304D22CE85922004CF92A /* Debug */,
-				50F304D32CE85922004CF92A /* Release */,
+				50FA08432CE880B700586F91 /* Debug */,
+				50FA08442CE880B700586F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50F304D42CE85922004CF92A /* Build configuration list for PBXNativeTarget "Data" */ = {
+		50FA08452CE880B700586F91 /* Build configuration list for PBXNativeTarget "DomainMovie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50F304D52CE85922004CF92A /* Debug */,
-				50F304D62CE85922004CF92A /* Release */,
+				50FA08462CE880B700586F91 /* Debug */,
+				50FA08472CE880B700586F91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 50F304C42CE85922004CF92A /* Project object */;
+	rootObject = 50FA08352CE880B700586F91 /* Project object */;
 }

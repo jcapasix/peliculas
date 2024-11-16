@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import DomainMovie
 
 protocol HomeViewDelegate {
-    func didSelectMovie(movie: Movie)
+    func didSelectMovie(movie: MovieEntity)
 }
 
 class HomeView: UIView {
@@ -16,51 +17,61 @@ class HomeView: UIView {
     // MARK: - UI Elements
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Search Movies"
+        searchBar.placeholder = "Buscar Pelicula"
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
-    private var movies: [Movie] = []
+    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    
+    private var movies: [MovieEntity] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
+    public var delegate: HomeViewDelegate?
     
     // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
-    
-    public var delegate: HomeViewDelegate?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Setup
+    
     private func setupView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.frame = self.bounds
+        tableView.backgroundView = activityIndicator
+        self.activityIndicator.startAnimating()
         backgroundColor = .white
         addSubview(searchBar)
         addSubview(tableView)
-        
         setupConstraints()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            // Search Bar
             searchBar.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             searchBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             searchBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            // Table View
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -68,9 +79,8 @@ class HomeView: UIView {
         ])
     }
     
-    func updateMovies(movies: [Movie]) {
+    func updateMovies(movies: [MovieEntity]) {
         self.movies = movies
-        tableView.reloadData()
     }
 }
 

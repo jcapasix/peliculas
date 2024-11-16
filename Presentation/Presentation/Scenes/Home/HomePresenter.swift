@@ -5,20 +5,35 @@
 //  Created by Jordan Capa on 16/11/24.
 //
 import Foundation
+import DomainMovie
 
 class HomePresenter: HomePresenterProtocol {
     weak var view: HomeViewProtocol?
-    var router: HomeRouterProtocol?
+    private var router: HomeRouterProtocol?
+    private let interactor: MovieInteractorProtocol
     
-    private var allMovies: [Movie] = []
-    
-    init(view: HomeViewProtocol, router: HomeRouterProtocol) {
+    private var allMovies: [MovieEntity] = []
+        
+    init(view: HomeViewProtocol, interactor: MovieInteractorProtocol, router: HomeRouterProtocol) {
         self.view = view
         self.router = router
+        self.interactor = interactor
     }
     
-    func fetchMovies() {
-        view?.showMovies(movies: allMovies)
+    func fetchMovies() async {
+        
+        do {
+            if let movies = try await interactor.fetchUpcomingMovies(page: 1) {
+                self.allMovies = movies
+                view?.showMovies(movies: movies)
+            } else {
+                // Maneja el error o la ausencia de datos
+                view?.showError(message: "Failed to fetch upcoming movies.")
+            }
+        } catch {
+            
+        }
+        
     }
     
     func searchMovies(query: String) {
@@ -30,8 +45,9 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func navigateToDetail(movie: Movie) {
-        router?.navigateToDetail(from: view!, movie: movie)
+    func navigateToDetail(movie: MovieEntity) {
+        guard let view = self.view else { return}
+        router?.navigateToDetail(from: view, movie: movie)
     }
 }
 
