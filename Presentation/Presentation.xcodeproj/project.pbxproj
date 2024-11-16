@@ -13,6 +13,18 @@
 		50F304EB2CE85B43004CF92A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 50F304EA2CE85B43004CF92A /* Base */; };
 		50F304ED2CE85B45004CF92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F304EC2CE85B45004CF92A /* Assets.xcassets */; };
 		50F304F02CE85B45004CF92A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 50F304EF2CE85B45004CF92A /* Base */; };
+		50FA07A22CE8608D00586F91 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07A12CE8608D00586F91 /* HomeViewController.swift */; };
+		50FA07A62CE860BA00586F91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07A52CE860BA00586F91 /* LoginViewController.swift */; };
+		50FA07A82CE860DC00586F91 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07A72CE860DC00586F91 /* LoginPresenter.swift */; };
+		50FA07AA2CE860E800586F91 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07A92CE860E800586F91 /* LoginRouter.swift */; };
+		50FA07AC2CE860F600586F91 /* LoginConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07AB2CE860F600586F91 /* LoginConfiguration.swift */; };
+		50FA07B02CE8614500586F91 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07AF2CE8614500586F91 /* MovieViewController.swift */; };
+		50FA07B22CE8615700586F91 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07B12CE8615700586F91 /* HomePresenter.swift */; };
+		50FA07B42CE8616100586F91 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07B32CE8616100586F91 /* HomeRouter.swift */; };
+		50FA07B62CE8616F00586F91 /* HomeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07B52CE8616F00586F91 /* HomeConfiguration.swift */; };
+		50FA07B82CE8617F00586F91 /* MovieConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07B72CE8617F00586F91 /* MovieConfiguration.swift */; };
+		50FA07BC2CE8619E00586F91 /* MovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07BB2CE8619E00586F91 /* MovieRouter.swift */; };
+		50FA07BE2CE861A800586F91 /* MoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA07BD2CE861A800586F91 /* MoviePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,18 @@
 		50F304EC2CE85B45004CF92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50F304EF2CE85B45004CF92A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50F304F12CE85B45004CF92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50FA07A12CE8608D00586F91 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		50FA07A52CE860BA00586F91 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50FA07A72CE860DC00586F91 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		50FA07A92CE860E800586F91 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		50FA07AB2CE860F600586F91 /* LoginConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfiguration.swift; sourceTree = "<group>"; };
+		50FA07AF2CE8614500586F91 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		50FA07B12CE8615700586F91 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		50FA07B32CE8616100586F91 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		50FA07B52CE8616F00586F91 /* HomeConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfiguration.swift; sourceTree = "<group>"; };
+		50FA07B72CE8617F00586F91 /* MovieConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieConfiguration.swift; sourceTree = "<group>"; };
+		50FA07BB2CE8619E00586F91 /* MovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRouter.swift; sourceTree = "<group>"; };
+		50FA07BD2CE861A800586F91 /* MoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,7 @@
 		50F304E22CE85B43004CF92A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				50FA079C2CE85F6000586F91 /* Scenes */,
 				50F304E32CE85B43004CF92A /* AppDelegate.swift */,
 				50F304E52CE85B43004CF92A /* SceneDelegate.swift */,
 				50F304E72CE85B43004CF92A /* ViewController.swift */,
@@ -65,6 +90,73 @@
 				50F304F12CE85B45004CF92A /* Info.plist */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		50FA079C2CE85F6000586F91 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07AD2CE8611700586F91 /* Movie */,
+				50FA079E2CE85F7E00586F91 /* Home */,
+				50FA079D2CE85F7300586F91 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		50FA079D2CE85F7300586F91 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07A02CE85FA400586F91 /* Views */,
+				50FA07A72CE860DC00586F91 /* LoginPresenter.swift */,
+				50FA07A92CE860E800586F91 /* LoginRouter.swift */,
+				50FA07AB2CE860F600586F91 /* LoginConfiguration.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		50FA079E2CE85F7E00586F91 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				50FA079F2CE85F9C00586F91 /* Views */,
+				50FA07B12CE8615700586F91 /* HomePresenter.swift */,
+				50FA07B32CE8616100586F91 /* HomeRouter.swift */,
+				50FA07B52CE8616F00586F91 /* HomeConfiguration.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		50FA079F2CE85F9C00586F91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07A12CE8608D00586F91 /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50FA07A02CE85FA400586F91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07A52CE860BA00586F91 /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50FA07AD2CE8611700586F91 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07AE2CE8612E00586F91 /* Views */,
+				50FA07BD2CE861A800586F91 /* MoviePresenter.swift */,
+				50FA07BB2CE8619E00586F91 /* MovieRouter.swift */,
+				50FA07B72CE8617F00586F91 /* MovieConfiguration.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		50FA07AE2CE8612E00586F91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07AF2CE8614500586F91 /* MovieViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +230,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FA07A62CE860BA00586F91 /* LoginViewController.swift in Sources */,
 				50F304E82CE85B43004CF92A /* ViewController.swift in Sources */,
+				50FA07AC2CE860F600586F91 /* LoginConfiguration.swift in Sources */,
+				50FA07B22CE8615700586F91 /* HomePresenter.swift in Sources */,
+				50FA07A82CE860DC00586F91 /* LoginPresenter.swift in Sources */,
 				50F304E42CE85B43004CF92A /* AppDelegate.swift in Sources */,
+				50FA07B02CE8614500586F91 /* MovieViewController.swift in Sources */,
 				50F304E62CE85B43004CF92A /* SceneDelegate.swift in Sources */,
+				50FA07AA2CE860E800586F91 /* LoginRouter.swift in Sources */,
+				50FA07BC2CE8619E00586F91 /* MovieRouter.swift in Sources */,
+				50FA07A22CE8608D00586F91 /* HomeViewController.swift in Sources */,
+				50FA07B82CE8617F00586F91 /* MovieConfiguration.swift in Sources */,
+				50FA07B42CE8616100586F91 /* HomeRouter.swift in Sources */,
+				50FA07BE2CE861A800586F91 /* MoviePresenter.swift in Sources */,
+				50FA07B62CE8616F00586F91 /* HomeConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
