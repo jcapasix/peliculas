@@ -8,11 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		50F304BD2CE858F7004CF92A /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 50F304BC2CE858F7004CF92A /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50FA07D82CE876A400586F91 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FA07D72CE876A400586F91 /* Data.framework */; };
+		50FA07D92CE876A400586F91 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50FA07D72CE876A400586F91 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50FA07DA2CE876A400586F91 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				50FA07D92CE876A400586F91 /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		50F304B92CE858F7004CF92A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F304BC2CE858F7004CF92A /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		50FA07D72CE876A400586F91 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FA07D82CE876A400586F91 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,6 +49,7 @@
 			children = (
 				50F304BB2CE858F7004CF92A /* Domain */,
 				50F304BA2CE858F7004CF92A /* Products */,
+				50FA07D62CE876A400586F91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +67,14 @@
 				50F304BC2CE858F7004CF92A /* Domain.h */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		50FA07D62CE876A400586F91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50FA07D72CE876A400586F91 /* Data.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +99,7 @@
 				50F304B52CE858F7004CF92A /* Sources */,
 				50F304B62CE858F7004CF92A /* Frameworks */,
 				50F304B72CE858F7004CF92A /* Resources */,
+				50FA07DA2CE876A400586F91 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
