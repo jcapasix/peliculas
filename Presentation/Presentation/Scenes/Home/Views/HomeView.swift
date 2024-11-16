@@ -15,10 +15,20 @@ protocol HomeViewDelegate {
 class HomeView: UIView {
     
     // MARK: - UI Elements
+    
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.placeholder = "Buscar Pelicula"
+        searchBar.placeholder = "Buscar Película"
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.barTintColor = Utils.backgroundColor
+        searchBar.backgroundColor = Utils.backgroundColor
+        if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+            textField.textColor = .white
+        }
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar Película", attributes: attributes)
         return searchBar
     }()
     
@@ -59,8 +69,10 @@ class HomeView: UIView {
         tableView.delegate = self
         tableView.frame = self.bounds
         tableView.backgroundView = activityIndicator
+        tableView.backgroundColor = Utils.backgroundColor
+        tableView.register(MovieCell.self, forCellReuseIdentifier: MovieCell.identifier)
         self.activityIndicator.startAnimating()
-        backgroundColor = .white
+        backgroundColor = Utils.backgroundColor
         addSubview(searchBar)
         addSubview(tableView)
         setupConstraints()
@@ -89,10 +101,16 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate {
         return movies.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movie = movies[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") ?? UITableViewCell(style: .default, reuseIdentifier: "MovieCell")
-        cell.textLabel?.text = movie.title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier, for: indexPath) as? MovieCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: movie)
         return cell
     }
     

@@ -23,6 +23,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     private func configureActions() {
         loginView.loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @objc private func didTapLogin() {

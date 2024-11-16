@@ -26,7 +26,7 @@ class MovieView: UIView {
         return label
     }()
     
-    private let genreLabel: UILabel = {
+    private let overviewLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ class MovieView: UIView {
         backgroundColor = .white
         addSubview(titleLabel)
         addSubview(yearLabel)
-        addSubview(genreLabel)
+        addSubview(overviewLabel)
         addSubview(descriptionLabel)
         setupConstraints()
     }
@@ -73,11 +73,11 @@ class MovieView: UIView {
             yearLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             yearLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            genreLabel.topAnchor.constraint(equalTo: yearLabel.bottomAnchor, constant: 10),
-            genreLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            genreLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            overviewLabel.topAnchor.constraint(equalTo: yearLabel.bottomAnchor, constant: 10),
+            overviewLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            overviewLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            descriptionLabel.topAnchor.constraint(equalTo: genreLabel.bottomAnchor, constant: 20),
+            descriptionLabel.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 20),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
@@ -87,7 +87,7 @@ class MovieView: UIView {
     func updateMovieDetails(movie: MovieEntity) {
         titleLabel.text = movie.title
         yearLabel.text = "Year: \(movie.year)"
-        genreLabel.text = "Genre: \(movie.genre)"
+        overviewLabel.text = "Genre: \(movie.overview)"
         descriptionLabel.text = "This is a detailed description of the movie \(movie.title)."
     }
 }

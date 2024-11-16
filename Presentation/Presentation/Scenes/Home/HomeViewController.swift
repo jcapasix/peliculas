@@ -22,13 +22,23 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         Task {
             await presenter?.fetchMovies()
         }
-        
     }
     
     private func configureActions() {
         homeView.searchBar.delegate = self
         homeView.delegate = self
         title = "Peliculas"
+        if let navigationBar = self.navigationController?.navigationBar {
+            navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.white
+            ]
+        }
+        let backButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
     
     func showMovies(movies: [MovieEntity]) {

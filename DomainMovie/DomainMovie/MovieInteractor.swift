@@ -18,7 +18,12 @@ public class MovieInteractor: MovieInteractorProtocol {
         do {
             let movies = try await movieRepository.fetchUpcomingMovies(page: page)
             return movies.compactMap {
-                MovieEntity(title: $0.title, year: $0.releaseDate, genre: $0.title)
+                MovieEntity(
+                    title: $0.title,
+                    year: $0.releaseDate,
+                    overview: $0.overview,
+                    posterUrl: "https://image.tmdb.org/t/p/w500/\($0.posterPath)"
+                )
             }
         } catch {
             return nil
