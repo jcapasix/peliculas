@@ -21,6 +21,12 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         configureActions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loginView.usernameTextField.text = ""
+        loginView.passwordTextField.text = ""
+    }
+    
     private func configureActions() {
         loginView.loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))

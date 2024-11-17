@@ -10,6 +10,7 @@ import DomainMovie
 
 protocol HomeViewDelegate {
     func didSelectMovie(movie: MovieEntity)
+    func scrollViewDidScroll()
 }
 
 class HomeView: UIView {
@@ -38,7 +39,7 @@ class HomeView: UIView {
         return tableView
     }()
     
-    private let activityIndicator = UIActivityIndicatorView(style: .large)
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     private var movies: [MovieEntity] = [] {
         didSet {
@@ -117,5 +118,14 @@ extension HomeView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = movies[indexPath.row]
         delegate?.didSelectMovie(movie: movie)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        if offsetY > contentHeight - height {
+            delegate?.scrollViewDidScroll()
+        }
     }
 }

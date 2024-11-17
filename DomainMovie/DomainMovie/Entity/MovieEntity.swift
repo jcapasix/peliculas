@@ -7,14 +7,18 @@
 
 public struct MovieEntity {
     public let title: String
-    public let year: String
     public let overview: String
+    public let releaseDate: String
     public let posterUrl: String
+    public let voteAverage: Double
+    public let headerUrl: String
     
-    public init(title: String, year: String, overview: String, posterUrl: String) {
+    public init(title: String, overview: String, releaseDate: String, posterUrl: String, voteAverage: Double, headerUrl: String) {
         self.title = title
-        self.year = year
         self.overview = overview
+        self.releaseDate = releaseDate
         self.posterUrl = posterUrl
+        self.voteAverage = voteAverage
+        self.headerUrl = headerUrl
     }
 }

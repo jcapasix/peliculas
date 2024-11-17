@@ -11,6 +11,7 @@ import CoreData
 public class MovieInteractor: MovieInteractorProtocol {
     
     private let movieRepository = MovieRepository()
+    private let baseImageUrl = "https://image.tmdb.org/t/p/w500/"
 
     public init() {}
     
@@ -20,9 +21,11 @@ public class MovieInteractor: MovieInteractorProtocol {
             return movies.compactMap {
                 MovieEntity(
                     title: $0.title,
-                    year: $0.releaseDate,
                     overview: $0.overview,
-                    posterUrl: "https://image.tmdb.org/t/p/w500/\($0.posterPath)"
+                    releaseDate: $0.releaseDate,
+                    posterUrl: "\(baseImageUrl)\($0.posterPath)",
+                    voteAverage: $0.voteAverage,
+                    headerUrl: "\(baseImageUrl)\($0.backdropPath)"
                 )
             }
         } catch {

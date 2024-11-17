@@ -69,12 +69,12 @@ class MovieCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            moviePosterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            moviePosterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             moviePosterImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             moviePosterImageView.widthAnchor.constraint(equalToConstant: 90),
             moviePosterImageView.heightAnchor.constraint(equalToConstant: 120),
             
-            movieTitleLabel.leadingAnchor.constraint(equalTo: moviePosterImageView.trailingAnchor, constant: 10),
+            movieTitleLabel.leadingAnchor.constraint(equalTo: moviePosterImageView.trailingAnchor, constant: 20),
             movieTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             movieTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             movieTitleLabel.heightAnchor.constraint(equalToConstant: 40),
@@ -84,7 +84,7 @@ class MovieCell: UITableViewCell {
             movieDescriptionLabel.trailingAnchor.constraint(equalTo: movieTitleLabel.trailingAnchor),
             
             movieDateLabel.leadingAnchor.constraint(equalTo: movieTitleLabel.leadingAnchor),
-            movieDateLabel.topAnchor.constraint(equalTo: movieDescriptionLabel.bottomAnchor, constant: 5),
+            movieDateLabel.topAnchor.constraint(equalTo: movieDescriptionLabel.bottomAnchor, constant: 10),
             movieDateLabel.trailingAnchor.constraint(equalTo: movieTitleLabel.trailingAnchor),
         ])
     }
@@ -95,7 +95,7 @@ class MovieCell: UITableViewCell {
             moviePosterImageView.sd_setImage(with: url, completed: nil)
         }
         movieDescriptionLabel.text = movie.overview
-        movieDateLabel.text = movie.year
+        movieDateLabel.text = movie.releaseDate
     }
 }
 

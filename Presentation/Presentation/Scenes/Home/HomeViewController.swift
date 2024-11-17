@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     private func configureActions() {
         homeView.searchBar.delegate = self
         homeView.delegate = self
-        title = "Peliculas"
+        title = "Películas"
         if let navigationBar = self.navigationController?.navigationBar {
             navigationBar.titleTextAttributes = [
                 .foregroundColor: UIColor.white
@@ -46,6 +46,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     
     func showError(message: String) {
+        homeView.activityIndicator.stopAnimating()
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -59,6 +60,12 @@ extension HomeViewController: UISearchBarDelegate {
 }
 
 extension HomeViewController: HomeViewDelegate {
+    func scrollViewDidScroll() {
+        Task {
+            await presenter?.fetchMovies()
+        }
+    }
+    
     func didSelectMovie(movie: MovieEntity) {
         presenter?.navigateToDetail(movie: movie)
     }

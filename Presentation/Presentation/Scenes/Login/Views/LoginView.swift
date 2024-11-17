@@ -23,39 +23,36 @@ class LoginView: UIView {
     
     let usernameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Enter your username"
+        textField.placeholder = "Username"
         textField.borderStyle = .roundedRect
-        textField.backgroundColor = Utils.backgroundColor
+        textField.backgroundColor = Utils.backgroundText
         textField.textColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(
             string: textField.placeholder ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
-        textField.layer.borderColor = UIColor.white.cgColor
-        textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 10
+        textField.clipsToBounds = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
 
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Enter your password"
+        textField.placeholder = "Password"
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
-        textField.backgroundColor = Utils.backgroundColor
+        textField.backgroundColor = Utils.backgroundText
         textField.textColor = UIColor.white
         textField.attributedPlaceholder = NSAttributedString(
             string: textField.placeholder ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
-        textField.layer.borderColor = UIColor.white.cgColor
-        textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 10
+        textField.clipsToBounds = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
-
     
     let loginButton: UIButton = {
         let button = UIButton(type: .system)

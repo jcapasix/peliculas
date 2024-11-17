@@ -10,6 +10,7 @@ import UIKit
 enum Utils {
     static let backgroundColor = UIColor(hex: "#151318")
     static let primaryColor = UIColor(hex: "#4454BF")
+    static let backgroundText = UIColor(hex: "#201F22")
 }
 
 extension UIColor {
