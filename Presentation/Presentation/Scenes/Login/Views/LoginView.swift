@@ -64,7 +64,6 @@ class LoginView: UIView {
         return button
     }()
     
-    // ImageView for background
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "loginBackground")

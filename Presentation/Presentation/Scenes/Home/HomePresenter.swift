@@ -11,7 +11,7 @@ class HomePresenter: HomePresenterProtocol {
     weak var view: HomeViewProtocol?
     private var router: HomeRouterProtocol?
     private let interactor: MovieInteractorProtocol
-    private var allMovies: [MovieEntity] = []
+    var allMovies: [MovieEntity] = []
         
     init(view: HomeViewProtocol, interactor: MovieInteractorProtocol, router: HomeRouterProtocol) {
         self.view = view

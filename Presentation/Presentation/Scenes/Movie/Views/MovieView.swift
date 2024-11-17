@@ -127,4 +127,3 @@ class MovieView: UIView {
         overviewLabel.text = movie.overview
     }
 }
-
