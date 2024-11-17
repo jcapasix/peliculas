@@ -21,12 +21,12 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func handleLogin(username: String, password: String) {
         guard !username.isEmpty else {
-            view?.showError(message: "Por favor, ingresa tu nombre de usuario.")
+            view?.showError(message: "Por favor, ingresa tu nombre de usuario. (Admin | Password*123)")
             return
         }
         
         guard !password.isEmpty else {
-            view?.showError(message: "La contraseña no puede estar vacía. Intenta de nuevo.")
+            view?.showError(message: "La contraseña no puede estar vacía. Intenta de nuevo. (Admin | Password*123)")
             return
         }
         

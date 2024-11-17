@@ -30,12 +30,12 @@ class LoginPresenterTests: XCTestCase {
 
     func testHandleLogin_EmptyUsername_ShowsError() {
         presenter.handleLogin(username: "", password: "Password*123")
-        XCTAssertTrue(mockView.errorMessage == "Por favor, ingresa tu nombre de usuario.")
+        XCTAssertTrue(mockView.errorMessage == "Por favor, ingresa tu nombre de usuario. (Admin | Password*123)")
     }
 
     func testHandleLogin_EmptyPassword_ShowsError() {
         presenter.handleLogin(username: "Admin", password: "")
-        XCTAssertTrue(mockView.errorMessage == "La contraseña no puede estar vacía. Intenta de nuevo.")
+        XCTAssertTrue(mockView.errorMessage == "La contraseña no puede estar vacía. Intenta de nuevo. (Admin | Password*123)")
     }
 
     func testHandleLogin_InvalidCredentials_ShowsError() {
